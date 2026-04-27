@@ -1,0 +1,208 @@
+body {
+    background-color: #e0e0e0;
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.page {
+    width: 210mm;
+    min-height: 297mm;
+    background: #fdfdfd;
+    margin-bottom: 20px;
+    padding: 10mm;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.category-row {
+    position: relative;
+    padding-top: 84px;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    border-bottom: 4px double #2e7d32;
+}
+
+.category-row:last-child {
+    border-bottom: none;
+}
+
+/* --- Top Left Banner Styling --- */
+.price-banner-container {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    display: flex;
+    align-items: stretch;
+    z-index: 20;
+    filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.3));
+}
+
+.page-badge {
+    background-color: #ffeb3b;
+    color: #000;
+    font-weight: 900;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 5px 8px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.page-badge span {
+    font-size: 1.3em;
+}
+
+.price-text-box {
+    background-color: #d32f2f;
+    color: white;
+    font-size: 1.6em;
+    font-weight: 900;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Red Arrow Tail */
+.price-text-box::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 19px solid transparent;
+    border-bottom: 19px solid transparent;
+    border-left: 20px solid #d32f2f;
+}
+
+/* Blue Triangle behind the arrow */
+.blue-triangle {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #0d47a1;
+    position: absolute;
+    right: -25px;
+    top: 0;
+    z-index: -1;
+}
+
+/* --- Top Right Free Item --- */
+.free-item-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 170px;
+    display: grid;
+    grid-template-columns: 54px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 7px;
+    align-items: center;
+    text-align: left;
+}
+
+.free-badge {
+    grid-column: 2;
+    color: #d32f2f;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 1;
+    border-bottom: 2px solid #000;
+    margin-bottom: 2px;
+}
+
+.free-item-img {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    display: block;
+    width: auto;
+    max-width: 54px;
+    height: 78px;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+.free-item-name {
+    grid-column: 2;
+    color: #d32f2f;
+    font-weight: bold;
+    font-size: 0.65em;
+    line-height: 1.1;
+}
+
+/* --- Products Layout --- */
+.items-flex-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 10px;
+    row-gap: 12px;
+    align-items: end;
+}
+
+.item-card {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    width: auto;
+    min-width: 0;
+    height: 168px;
+}
+
+.item-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+/* Yellow ID Bubble */
+.item-id {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    background-color: #ffeb3b;
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.85em;
+    z-index: 10;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Text floating over the image */
+.item-name {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.75em;
+    line-height: 1.2;
+    z-index: 10;
+    text-shadow: 
+        -1px -1px 0 #d32f2f,  
+         1px -1px 0 #d32f2f,
+        -1px  1px 0 #d32f2f,
+         1px  1px 0 #d32f2f,
+         0px  2px 2px rgba(0,0,0,0.8);
+}
